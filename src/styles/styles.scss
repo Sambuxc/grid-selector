@@ -1,3 +1,8 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
 @font-face {
   font-family: "Europa";
   font-weight: normal;
@@ -18,8 +23,44 @@ body {
   background-position: center;
 }
 
-.grid-box {
-  .h1 {
+.grid {
+  padding: 20px 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  width: 550px;
+  height: fit-content;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 254, 254);
+  border-radius: 16px;
+  box-shadow: 3px 3px 35px rgba(0, 0, 0, 0.5);
+  // filter: blur(3px);
+
+  &__area {
+    height: 80%;
+    background: rgba(255, 255, 255, 1);
+    border-radius: 10px;
+    box-shadow: 3px 3px 35px rgba(0, 0, 0, 0.15);
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+
+    p {
+      margin-bottom: 0;
+      color: rgba(0, 0, 0, 0.5);
+    }
+
+    .value {
+      color: rgb(0, 0, 0);
+    }
+  }
+
+  h1 {
     font-family: "Europa bold";
     font-size: 14px;
   }
