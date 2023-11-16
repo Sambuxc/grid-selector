@@ -1,0 +1,30 @@
+@font-face {
+  font-family: "Europa";
+  font-weight: normal;
+  src: url("../fonts/europa-regular-webfont.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Europa bold";
+  src: url("../fonts/europa-bold-webfont.woff2") format("woff2");
+}
+
+body {
+  font-family: "Europa";
+  min-height: 100vh;
+  background-image: url("../img/bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.grid-box {
+  .h1 {
+    font-family: "Europa bold";
+    font-size: 14px;
+  }
+
+  p {
+    font-size: 12px;
+  }
+}

@@ -2,7 +2,7 @@
   "name": "@sambuxc/grid-selector",
   "description": "Grid selector component",
   "private": false,
-  "author": "symbo.ls",
+  "author": "Sambuxc",
   "version": "0.0.1",
   "repository": "",
   "main": "src/index.js",
@@ -11,11 +11,12 @@
     "build": "parcel build src/index.html"
   },
   "dependencies": {
-    "domql": "latest",
     "@domql/emotion": "latest",
-    "@domql/router": "latest"
+    "@domql/router": "latest",
+    "domql": "latest"
   },
   "devDependencies": {
+    "@parcel/transformer-sass": "2.10.3",
     "parcel": "^2.0.1"
   }
 }
