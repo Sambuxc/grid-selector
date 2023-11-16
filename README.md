@@ -5,7 +5,7 @@ Example dev setup (boilerplate) to use [DOMQL](https://github.com/rackai/domql).
 
 1. Clone the repo
 ```
-git clone git@github.com:domql/starter-kit.git
+git clone git@https://github.com/Sambuxc/grid-selector.git
 ```
 
 2. Install scripts

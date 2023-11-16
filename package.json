@@ -1,6 +1,6 @@
 {
-  "name": "@domql/starter-kit",
-  "description": "Example DOMQL dev setup (boilerplate)",
+  "name": "@sambuxc/grid-selector",
+  "description": "Grid selector component",
   "private": false,
   "author": "symbo.ls",
   "version": "0.0.1",
