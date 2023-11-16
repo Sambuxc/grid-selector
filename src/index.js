@@ -1,18 +1,18 @@
-'use strict'
+"use strict";
 
-import DOM from 'domql'
-var { performance } = window
+import Grid from "./components/Grid.js";
 
-var start = performance.now()
-var dom = DOM.create({
-  style: {
-    fontFamily: '"Helvetica", "Arial", --system-default'
+import DOM from "domql";
+var { performance } = window;
+
+var start = performance.now();
+var dom = DOM.create(
+  {
+    class: 'app',
+    proto: Grid,
   },
-  icon: '✅',
-  strong: 'domql',
-  text: ` render in `,
-  time: '',
-  milliseconds: ' milliseconds'
-}, null, 'app')
+  null,
+  "app"
+);
 
 // dom.update({ time: `${performance.now() - start}` })
