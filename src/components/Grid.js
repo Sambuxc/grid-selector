@@ -10,7 +10,7 @@ const gridAreaContent = []
 for (let i = 0; i < rows; i++){
   const arrOfCells = []
   for (let ii = 0; ii < cols; ii++) {
-    arrOfCells.push(GridCell)
+    arrOfCells.push(GridCell())
   }
   gridAreaContent.push(GridRow(arrOfCells))
 }

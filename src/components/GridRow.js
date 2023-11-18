@@ -1,7 +1,10 @@
 const GridRow = (children) => ({
   tag: "div",
   class: "grid__row",
-  childProto: children
+  childProto: children,
+  state: {
+    selectedCells: []
+  }
 })
 
 export default GridRow
