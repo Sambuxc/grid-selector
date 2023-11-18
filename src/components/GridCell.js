@@ -36,11 +36,20 @@ const GridCell = () => ({
           rowElem.state.selectedCells.splice(i)
         }
 
-        // TODO:
-        // ensure state is reset for selected rows that are greater than the currently hovered cell item
-        // for (let i = elem.key; i < rowElem.children.length; i++ ) {
-        //   console.log(i)
-        // }
+      }
+      
+      // TODO:
+      // Implement previous rows full selection
+      const gridCellKeyOffset = parseInt(elem.key) + 1
+      for (let i = gridCellKeyOffset; i < rowElem.length; i++ ) {
+        const rowElemState = rowElem[i].state
+        console.log(rowElemState)
+        if (rowElemState.isSelected) {
+          rowElemState.update({
+            isSelected: false,
+          })
+        }
+        
       }
       // console.log(rowElem.state)
     },
