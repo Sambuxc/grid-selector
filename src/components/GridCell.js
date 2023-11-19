@@ -18,7 +18,6 @@ const GridCell = () => ({
       //   state.update({ key: value })
       // }
 
-
       const currGridRow = gridCell.parent
       currGridRow.state.selectedCells = [] // reset selectedCells as to not double up
 
@@ -40,10 +39,8 @@ const GridCell = () => ({
         }
       }
 
-
-      // Select all previous row's cells
-
-      const currentRowKey = parseInt(currGridRow.parent.key) - 1 // offset by 1 as to not update the current row, only previous rows
+      // Handle selection all previous row's cells
+      let currentRowKey = parseInt(currGridRow.parent.key) - 1 // offset by 1 as to not update the current row, only previous rows
       // update all gridCells in rows that are previous to the currentRowKey
       for (let i = currentRowKey; i >= 0; i--) {
         const prevRowElem = currGridRow.parent.parent[i]
@@ -52,7 +49,7 @@ const GridCell = () => ({
           const prevRowChildren = prevRowElem.childProto
 
           for (let ii = 0; ii <= prevRowChildren.length; ii++) {
-            if (prevRowChildren[ii]){
+            if (prevRowChildren[ii]) {
               prevRowChildren[ii].state.update({
                 isSelected: true,
               })
@@ -61,8 +58,8 @@ const GridCell = () => ({
         }
       }
 
-      // Handle unselecting of grid cells
-      const gridCellKeyOffset = parseInt(gridCell.key) +1
+      // Handle unselecting of grid cells in current row
+      const gridCellKeyOffset = parseInt(gridCell.key) + 1
       for (let i = gridCellKeyOffset; i < currGridRow.length; i++) {
         const cellElemState = currGridRow[i].state
 
@@ -73,9 +70,30 @@ const GridCell = () => ({
             isSelected: false,
           })
         }
-      }      
-    },
+      }
 
+      // Handle unselecting grid cells in other rows greater than current cell row
+      const gridArea = currGridRow.parent.parent
+      currentRowKey++ // reset minus offset for forward loop compatibility
+      if (currentRowKey != gridArea.length) {
+        for (let i = currentRowKey+1; i < gridArea.length; i++) {
+          const gridRow = gridArea[i]
+          const rowChildren = gridRow.childProto
+
+          // check if the row has selected cells
+          // loop over grid cells and set selected state to false tp uncheck them
+          if (rowChildren.state.selectedCells.length > 0) {
+            for (let ii = 0; ii < rowChildren.length; ii++) {
+              const cell = rowChildren[ii]
+              cell.state.update({
+                isSelected: false,
+              })
+            }
+          }
+        }
+      }
+
+    }, // end mouseover
   },
 })
 
