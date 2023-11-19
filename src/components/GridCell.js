@@ -41,11 +41,12 @@ const GridCell = () => ({
       // TODO:
       // Implement previous rows full selection
       const gridCellKeyOffset = parseInt(elem.key) + 1
+
       for (let i = gridCellKeyOffset; i < rowElem.length; i++ ) {
-        const rowElemState = rowElem[i].state
-        console.log(rowElemState)
-        if (rowElemState.isSelected) {
-          rowElemState.update({
+        const cellElemState = rowElem[i].state
+
+        if (cellElemState.isSelected) {
+          cellElemState.update({
             isSelected: false,
           })
         }
