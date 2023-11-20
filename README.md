@@ -1,5 +1,5 @@
-# DOMQL Starter Kit
-Example dev setup (boilerplate) to use [DOMQL](https://github.com/rackai/domql). You can also check [playground](https://domql.com/playground/).
+# Grid Selector Component using DOMQL & Parceljs
+<a href="https://sambuxc.github.io/grid-selector/" target="_blank" alt="Grid selector component using domql and parceljs">View Demo</a>
 
 ### Setup
 
@@ -17,3 +17,5 @@ yarn
 ```
 yarn start
 ```
+
+<i>Yours truly</i>
