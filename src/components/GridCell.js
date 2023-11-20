@@ -4,7 +4,7 @@ const selected = "selected"
 const GridCell = () => ({
   tag: "div",
   class: (elem, state) => (state.isSelected ? baseClass + selected : baseClass),
-  text: (elem, state) => elem.key,
+  // text: (elem, state) => elem.key,
   state: {
     isSelected: false,
     classList: baseClass,
