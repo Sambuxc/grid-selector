@@ -38,3 +38,6 @@ dist
 
 # Yarn lock
 yarn.lock
+
+#System files
+.DS_Store

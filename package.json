@@ -5,10 +5,9 @@
   "author": "Sambuxc",
   "version": "1.0.0",
   "repository": "",
-  "main": "src/index.js",
   "scripts": {
     "start": "parcel src/index.html",
-    "build": "parcel build src/index.html"
+    "build": "parcel build --no-content-hash src/index.html --public-url ./"
   },
   "dependencies": {
     "@domql/emotion": "latest",
@@ -17,6 +16,6 @@
   },
   "devDependencies": {
     "@parcel/transformer-sass": "2.10.3",
-    "parcel": "^2.0.1"
+    "parcel": "latest"
   }
 }
