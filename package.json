@@ -3,7 +3,7 @@
   "description": "Grid selector component",
   "private": false,
   "author": "Sambuxc",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "repository": "",
   "scripts": {
     "start": "parcel src/index.html",
