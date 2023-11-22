@@ -1,5 +1,4 @@
 import GridArea from "./GridArea.js"
-import GridRow from "./GridRow.js"
 import GridCell from "./GridCell.js"
 
 const childComponents = []
@@ -8,11 +7,9 @@ const cols = 16
 
 const gridAreaContent = []
 for (let i = 0; i < rows; i++){
-  const arrOfCells = []
   for (let ii = 0; ii < cols; ii++) {
-    arrOfCells.push(GridCell())
+    gridAreaContent.push(GridCell())
   }
-  gridAreaContent.push(GridRow(arrOfCells))
 }
 
 const title = {
