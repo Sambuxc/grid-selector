@@ -1,0 +1,19 @@
+.grid__footer > div {
+  display: flex;
+  justify-content: space-between;
+
+  p {
+    margin-bottom: 0;
+    color: rgba(0, 0, 0, 0.5);
+  }
+
+  .selection_coordinates,
+  .selection_total {
+    color: rgba(0, 0, 0, 0.5);
+
+    .value {
+      padding-left: 5px;
+      color: rgba(0, 0, 0, 1);
+    }
+  }
+}

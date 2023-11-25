@@ -105,20 +105,6 @@ body {
     color: white;
   }
 
-  &__footer {
-    display: flex;
-    justify-content: space-between;
-
-    p {
-      margin-bottom: 0;
-      color: rgba(0, 0, 0, 0.5);
-    }
-
-    .value {
-      color: rgb(0, 0, 0);
-    }
-  }
-
   h1 {
     font-family: "Europa bold";
     font-size: 14px;

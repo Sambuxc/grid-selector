@@ -5,6 +5,7 @@
   "author": "Sambuxc",
   "version": "2.0.0",
   "repository": "",
+  "main": "src/index.js",
   "scripts": {
     "start": "parcel src/index.html",
     "build": "parcel build --no-content-hash src/index.html --public-url ./",
