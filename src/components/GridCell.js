@@ -20,14 +20,27 @@ const GridCell = () => ({
       const selectedCellsLength = cellParent.state.selectedCells.length
       const currentKey = cellKey
 
-      // reset the parents selected cells first - might not be needed
-      // updateState(cellParent.state, "selectedCells", [])
-      // if (selectedCellsLength == 0 || selectedCellsLength > 1 || currentKey > 0) {
+      // TODO:
+      // Move the logic that handles updating the parent state into the on:{ update() }
+      // So when the cell's isSelected state is updated, then add or remove it from the selectedCells parent array list.
+      if (selectedCellsLength <= 1 && currentKey == 0) {
+        // if we have only 1 or less cells selected
+        updateState(state, "isSelected", !state.isSelected)
+        if (state.isSelected) {
+          // add to array list
+          updateState(cellParent.state, "selectedCells", [currentKey])
+        } else {
+          // remove from array list
+          selectedCells.splice(currentKey, 1)
+          updateState(cellParent.state, "selectedCells", selectedCells)
+        }
+      }
       // If we have more than 1 selected cell then
-      if (currentKey <= selectedCellsLength) {
+      else if (currentKey <= selectedCellsLength) {
         // Handle deselection of cells because user has clicked a grid cell key than is less than the amount stored
-        for (let i = currentKey + 1; i < selectedCellsLength; i++) {
+        for (let i = currentKey; i < selectedCellsLength + 1; i++) {
           if (cellParent[i].state.isSelected) {
+            // if we have already selected grid cells then update their state to false and remove from array list
             updateState(cellParent[i].state, "isSelected", false)
 
             // remove cell from selected cells array
@@ -58,7 +71,7 @@ const GridCell = () => ({
       const selectionCoordsComponent = cellParent.parent.parent[2].childProto[0]
       const { row, column } = calculateRowAndColumn(cellKey) // offset the key by 1 due to the keys starting from 0.
       selectionCoordsComponent.state.update({
-        coordinates: [row+1, column+1],
+        coordinates: [row + 1, column + 1],
       })
     }, // end click
   }, // end on
